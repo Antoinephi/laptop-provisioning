@@ -2,6 +2,7 @@
   become: yes
   become_method: sudo
   roles:
-    - nodejs
-    - docker
-    - oracle-jdk
+    - {role: nodejs, tags: ['nodejs'] }
+    - {role: docker, tags: ['docker'] }
+    - {role: oracle-jdk, tags: ['jdk'] }
+    - {role: intellij, tags: ['intellij'] }
