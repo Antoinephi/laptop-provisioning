@@ -1,0 +1,24 @@
+- name: add the webupd8 launchpad apt repository key
+  apt_key:
+    id=0xC2518248EEA14886
+    keyserver=keyserver.ubuntu.com
+    state=present
+  become: yes
+
+- name: add the webupd8 launchpad apt repositories
+  apt_repository:
+    repo="{{ item }} http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main"
+    update_cache=yes
+    state=present
+  with_items:
+    - deb
+    - deb-src
+
+- name: accept the licence
+  debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
+  become: yes
+
+- name: install Oracle JDK
+  apt:
+    name: oracle-java8-installer
+    state: latest
