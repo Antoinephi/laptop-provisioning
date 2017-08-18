@@ -7,8 +7,8 @@ TODO :
 - Oracle Java
 - IntelliJ
 - VS Code
-- Node & npm
-- docker + compose
+- :heavy_check_mark: Node & npm
+- :heavy_check_mark: docker + compose
 - git 
 - maven
 - chrome
