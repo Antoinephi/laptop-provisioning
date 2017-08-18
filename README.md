@@ -4,7 +4,7 @@ Laptop provisioning with Ansible to automate linux laptop setup.
 
 TODO :
 
-- Oracle Java
+- :heavy_check_mark: Oracle Java
 - IntelliJ
 - VS Code
 - :heavy_check_mark: Node & npm
