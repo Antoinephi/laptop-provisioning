@@ -1,0 +1,26 @@
+- name: create install folder
+  become: yes
+  file: 
+    path: /usr/local/idea2017.2 
+    state: directory 
+    group: staff 
+    mode: 0775
+    recurse: yes
+
+- name: create tmp folder
+  file:
+    path: idea 
+    state: directory 
+    group: staff 
+    mode: 0775
+    recurse: yes
+
+- name: download intellij
+  get_url: 
+    url: https://download.jetbrains.com/idea/ideaIU-2017.2.2.tar.gz
+    dest: idea
+
+- name: extract archive
+  unarchive: 
+    src: idea/ideaIU-2017.2.2.tar.gz
+    dest: /usr/local/idea2017.2
