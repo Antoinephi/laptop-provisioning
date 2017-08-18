@@ -1,0 +1,49 @@
+- name: Allow apt through HTTPS
+  become: yes
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gnupg2
+    - software-properties-common
+
+- name: add docker gpg key
+  become: yes
+  apt_key: 
+    url: https://download.docker.com/linux/debian/gpg
+    id: 0EBFCD88
+    state: present
+  
+- name: add docker debian deb repository
+  become: yes
+  apt_repository: repo="deb https://download.docker.com/linux/debian stretch stable" update_cache=yes state=present  
+  tags: debian
+
+- name: update apt-get
+  become: yes
+  shell: apt-get update
+
+- name: install docker ce
+  become: yes
+  apt: 
+    name: docker-ce
+    state: latest
+
+- name: add docker group
+  become: yes
+  group: name=docker system=yes state=present    
+
+- name: add current user into docker group
+  become: yes
+  user: name=antoine groups=docker append=yes state=present
+
+- name: install docker-compose
+  become: yes
+  apt:
+    name: docker-compose
+    state: latest
+
+
