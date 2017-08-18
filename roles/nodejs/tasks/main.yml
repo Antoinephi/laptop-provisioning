@@ -1,5 +1,5 @@
 - name: install curl
-  sudo: yes
+  become: yes
   apt: 
     name: curl
     state: present
