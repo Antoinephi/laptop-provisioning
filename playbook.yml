@@ -6,3 +6,4 @@
     - {role: docker, tags: ['docker'] }
     - {role: oracle-jdk, tags: ['jdk'] }
     - {role: intellij, tags: ['intellij'] }
+    - {role: maven, tags: ['maven']}
