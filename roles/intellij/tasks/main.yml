@@ -24,3 +24,6 @@
   unarchive: 
     src: idea/ideaIU-2017.2.2.tar.gz
     dest: /usr/local/idea2017.2
+
+- name: create symoblic link
+  shell: ln -s /usr/local/idea2017.2 /usr/local/idea
