@@ -3,16 +3,16 @@
 Laptop provisioning with Ansible to automate linux laptop setup.
 
 TODO :
-
+- :heavy_check_mark: ansible install script
 - :heavy_check_mark: Oracle Java
-- IntelliJ
+-  IntelliJ (WIP: need fix to add shortcut)
 - VS Code
 - :heavy_check_mark: Node & npm
 - :heavy_check_mark: docker + compose
 - git 
-- maven
+- :heavy_check_mark: maven
 - chrome
-- conf (gnome?, packages non-free, setup bashrc, terminal...)
+- conf (gnome?, packages non-free, setup bashrc, shell...)
 
 
 
